@@ -2,7 +2,7 @@
 /*ARQUIVO DE PERFIL DO USUARIO */
 session_start();
 
-$idVenda = $_GET['u_id'];
+$idVenda = $_GET['id'];
 
 //incluir o arquivo de conexao com o banco de dados
 include "../configuracao/conexao.php";
@@ -20,12 +20,10 @@ while ($row_user = $consulta->fetchArray()) {
     $nome = $row_user['nome'];
     $email = $row_user['email'];
     $data_nascimento = $row_user['data_nascimento'];
-    $foto = $row_user['foto'];
 }
 
  /*Realizar uma query para pegar os dados da compra e mostrar no html*/
   $query2 = "SELECT * FROM compra WHERE id = '$idVenda'";
-echo $query2;
   $venda = $db->query($query2);
 
   while ($DadosVenda  = $venda->fetchArray()) {
@@ -36,14 +34,13 @@ echo $query2;
   }
 
   $sql3 = "SELECT * FROM produtos WHERE id = '$id_produto'";
-  echo $sql3;
     $produto = $db->query($sql3);
 
     while ($DadosProduto = $produto->fetchArray()) {
       $nome_produto = $DadosProduto['nome'];
       $descricao = $DadosProduto['descricao'];
       $preco = $DadosProduto['preco'];
-      $foto = $DadosProduto['foto'];
+      $foto = $DadosProduto['imagem'];
     }
 
 //inclui o arquivo de componentes/header.php
@@ -95,7 +92,7 @@ include "../componentes/header.php";
                     </table>
                     <table>
                       <th scope="col">Valor Unid:</th>
-                      <th scope="col">R$<?php echo number_format( $valor ,2,",",".");?></th>
+                      <th scope="col">R$<?php echo number_format( $preco ,2,",",".");?></th>
                     </table>
                     <table>
                       <th scope="col">Valor Total:</th>

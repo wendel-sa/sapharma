@@ -25,9 +25,14 @@ $consulta = $db->query($query);
 
 //verificar se a consulta retornou algum resultado do sqlite
 if ($consulta->fetchArray()) {
+    $sqlUserLog = "SELECT * FROM usuarios WHERE email = '$email'";
+    $resultUserLog = $db->query($sqlUserLog);
+    $rowUserLog = $resultUserLog->fetchArray();
+    $idUsuario = $rowUserLog['id'];
     //se retornou, criar uma sessao com o nome de usuario
     session_start();
     $_SESSION['usuario'] = $email;
+    $_SESSION['idUsuario'] = $idUsuario;
     header("Location: ../usuarios/perfil.php");
     exit;
 } else {

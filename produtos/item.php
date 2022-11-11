@@ -15,22 +15,10 @@ $sql = "SELECT * FROM produtos WHERE Id= $id";
 //executar o select em pdo
 
 $resultado = $db->query($sql);
+
+
 while ($item = $resultado->fetchArray()) {
-echo $item['id'];
-    //criar a variavel de query com um select * da tabela usuarios
-    $DadosUser = "SELECT * FROM usuarios WHERE email = '" . $_SESSION['usuario'] . "'";
-
-    //executar a query em pdo
-    $consulta = $db->query($DadosUser);
-
-    //salva os dados do usuarios em variaveis
-    while ($row_user = $consulta->fetchArray()) {
-
-        $nome = $row_user['nome'];
-        $email = $row_user['email'];
-        $data_nascimento = $row_user['data_nascimento'];
-        $foto = $row_user['foto'];
-    }
+    
 
 ?>
 	<!-- Product section-->
@@ -41,44 +29,6 @@ echo $item['id'];
 							<div class="col-md-6">
 							
 									<h1 class="display-4 fw-bolder"><?php echo $item['nome']; ?></h1>
-									<div class="d-grip gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-										<?php
-											//Verifica se o produto já está nos favoritos
-											$sqlFavoritos = "SELECT * FROM favoritos WHERE id_usuario = '$idUsuario' AND id_produto = '$item[id]'";
-											$verifica = $db->query($sqlFavoritos);
-
-											$verifica = $verifica->fetchArray(SQLITE3_ASSOC);
-											if($verifica > 0) {
-										?>
-
-											<form action="../favoritos/delete.php" method="POST">
-												<input type="hidden" name="id_usuario" value="<?php echo $idUsuario ?>">
-												<input type="hidden" name="id_produto" value="<?php echo $item['id'] ?>">
-
-												<button class="btn custom-btn btn-lg rounded-circle py-2" type="submit">
-													<i class="fa-solid fa-skull"></i>
-											 
-												</button>
-											</form>
-												
-										<?php 
-											} else { 
-										?>
-												
-											<form action="../favoritos/insert.php" method="POST">
-												<input type="hidden" name="id_usuario" value="<?php echo $idUsuario ?>">
-												<input type="hidden" name="id_produto" value="<?php echo $item['id'] ?>">
-
-												<button class="btn custom-btn btn-lg rounded-circle py-2" type="submit">
-													 <i class="fa-solid fa-heart"></i>
-												</button>
-											</form>
-										
-										<?php 
-											}
-										}
-										?>
-									</div>
 									<div class="fs-5 mb-2">
 											<h2>R$ <?php echo number_format($item['preco'], 2, ",", "."); ?></h2>
 									</div>
@@ -103,7 +53,7 @@ echo $item['id'];
 											<div class="row d-flex justify-content-between align-items-center me-2">
 												<div class="col">
 													<input type="hidden" name="valor" value="<?php echo $item['preco']; ?>">
-													<input type="text" name="idProduto" value="<?php echo $item['id']; ?>">
+													<input type="hidden" name="idProduto" value="<?php echo $item['id']; ?>">
 													<input type="hidden" name="idUsuario" value="<?php echo $idUsuario; ?>">
 													<div class="form-group d-flex flex-column">
 														<label for="quantidade"><b>Quantidade</b></label>
@@ -141,7 +91,7 @@ echo $item['id'];
 													
 												<form action="../favoritos/insert.php" method="POST">
 													<input type="hidden" name="id_usuario" value="<?php echo $idUsuario ?>">
-													<input type="text" name="id_produto" value="<?php echo $item['id'] ?>">
+													<input type="hidden" name="id_produto" value="<?php echo $item['id'] ?>">
 	
 													<button class="btn custom-btn btn-lg rounded-circle py-2" type="submit">
 														 <i class="fa-solid fa-heart"></i>
@@ -149,9 +99,20 @@ echo $item['id'];
 												</form>
 											
 											<?php 
-												}
-											}
+												} 
+											} else {
+												//se o usuario nao esta logado botao para fazer login
 											?>
+
+											<a href="../usuarios/login.php" class="btn custom-btn btn-lg py-2">
+												Faça seu login 
+											</a>
+											<?php
+												}
+											?>
+
+											
+											
 										</div>
 									</div>
 												
@@ -287,7 +248,7 @@ echo $item['id'];
 									</div>
 
 									<div class="action d-flex justify-content-end mt-2 align-items-center">
-										<?php echo $comentario['dataComentario'] ?>
+										<?php echo $comentario['data'] ?>
 									</div>			
 								</div>			
 							<?php } ?>
@@ -297,5 +258,7 @@ echo $item['id'];
 
 
 <?php
+		}
+	
 	include '../componentes/footer.php'
 ?>
