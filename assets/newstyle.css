@@ -1,0 +1,266 @@
+/* Cores:https:https://www.creatopy.com/blog/wp-content/uploads/2021/06/pastel-color-palette-lilac-instagram-post.png 
+<a href="https://storyset.com/people">People illustrations by Storyset</a>*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+/*CSS Geral*/
+body{
+  font-family: 'Poppins', sans-serif;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+div{
+  display: block;
+}
+
+h1{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  color: #363958;
+  padding: 0px;
+  margin: 0px;
+}
+
+h2{
+  font-family: 'Bebas Neue';
+  font-size: 60px;
+  color: #363958;
+}
+
+h3{
+  font-family: 'Bebas Neue';
+  font-size: 48px;
+  color: #363958;
+}
+
+h4{
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #363958;
+}
+
+h5{
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #363958;
+}
+
+
+/*--header---*/
+#header{
+	height: auto;
+  padding: 50px 0px 70px 0px;
+  background-color: #f4f5ff;
+  width: 100vw;
+}
+
+#header span{
+  font-weight: 700;
+}
+
+.custom-navbar{
+  background: rgba(244, 245, 255, 0.7);
+}
+
+.custom-ul{
+  text-align: center;
+  background-color: #fff;
+}
+
+.shadow{
+  box-shadow: 0px .5rem 1em rgba(0,0,0,0.8); !important
+}
+
+.custom-li{
+  font-weight: 700;
+  padding: 0px 25px;
+}
+
+.custom-logo{
+  width: 30%;
+  font-family: 'Bebas Neue', sans-serif;
+  padding-left: 20px;
+}
+
+.custom-highlight{
+  color: #7C459C;
+}
+
+.custom-btn{
+	color: #fff;
+  background-color: #7c459c;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+/*Card*/
+.card h5{
+  font-size: 20px;
+}
+
+.card p{
+  font-size: 16px;
+}
+
+.custom-card{
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+  border: none;
+}
+
+.custom-img-width{
+  width: 100px;
+}
+
+.custom-usuarios-card{
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+  border: none;
+}
+
+
+/*Cards*/
+
+.custom-footer{
+  background-color: transparent;
+  border: none;
+}
+
+.custom-bg{
+  height: 350px;
+  background: #f1f1f1;
+  border-radius: 12px;
+}
+
+/*footer*/
+#footer{
+  padding: 25px 0;
+}
+
+footer h5{
+  padding: 10px 0;
+}
+
+#footer li a{
+  text-decoration: none;
+}
+
+
+
+/*Sessao de comentarios*/
+body {
+    background-color: #f7f6f6
+}
+
+.card {
+    
+    border: none;
+    box-shadow: 5px 6px 6px 2px rgba(0,0,0, 0.2);
+    border-radius: 4px;
+}
+
+
+.dots{
+
+    height: 4px;
+  width: 4px;
+  margin-bottom: 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge{
+
+        padding: 7px;
+        padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.user-img{
+
+    margin-top: 4px;
+}
+
+.check-icon{
+
+    font-size: 17px;
+    color: #c3bfbf;
+    top: 1px;
+    position: relative;
+    margin-left: 3px;
+}
+
+.form-check-input{
+    margin-top: 6px;
+    margin-left: -24px !important;
+    cursor: pointer;
+}
+
+
+.form-check-input:focus{
+    box-shadow: none;
+}
+
+
+.icons i{
+
+    margin-left: 8px;
+}
+.reply{
+
+    margin-left: 12px;
+}
+
+.reply small{
+
+    color: #b7b4b4;
+
+}
+
+
+.reply small:hover{
+
+    color: green;
+    cursor: pointer;
+
+}
+/*css do joinha*/
+button{
+  cursor: pointer;
+  outline: 0;
+  color: #AAA;
+
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+body{
+	overflow-x:hidden;
+}
+
+.checked{
+	color:orange;
+}
+.fav{
+	color:rgb(23,16,7);
+}
+
+

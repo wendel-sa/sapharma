@@ -1,0 +1,129 @@
+
+/* Cores:https:https://www.creatopy.com/blog/wp-content/uploads/2021/06/pastel-color-palette-lilac-instagram-post.png 
+<a href="https://storyset.com/people">People illustrations by Storyset</a>*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Open+Sans:wght@700&family=VT323&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+body{background-image: radial-gradient(white, #dbb0f2);
+}
+.navbar,.dropdown-menu {
+  background-color: #7c459c;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+body{
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  /*font-family: 'Merriweather', serif;
+  font-family: 'times new square', serif;
+  */
+  
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+label, .btn{
+  font-family: Ubuntu;
+  font-weight: 500;
+}
+
+.row,body > *{
+  padding: 10px 20px;
+}
+
+/* Navbar links */
+.navbar a,.navbar li{
+  float: left;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+
+footer{
+  position: static;
+  bottom: 0;
+}
+.nav-footer{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  align-content:flex-star;
+  font-size: 20px;
+}
+
+.nav-footer h3,.nav-footer p{
+  color:white;
+  margin: 2px 0px;
+}
+
+/* mudança ao passar o mouse */
+.navbar a:hover {
+  color: white;
+  border-radius: 10px;
+  background-color: #9a6cb4;
+}
+
+/* link atual */
+.active {
+  background-color: #9a6cb4;
+}
+
+.navbar-brand{
+  height: 60px;
+  width: 60px;
+}
+.logo{
+  width: 150px;
+}
+
+.btn{
+  background-color:  #7c459c;
+}
+
+.card-title{
+  font-size: 16px;
+}
+
+h1, label{
+  color: #552e6b;
+}
+
+h6.card-title {
+  font-size: 14px;
+}
+.im{
+  height:300px;
+  width:400px;
+}
+
+card-body {
+  color: black;
+}
+
+.card-produto h2{
+  color: #9a6cb4;
+}
+.tamanho{
+  padding:2px;
+  font-family: Helvetica;
+  font-size:35px;
+  color:#0c6b00;
+}
+.pp{
+  height: 300px;
+  filter: invert(100%);
+  border: medium solid black;
+  border-radius: 10px;
+  padding: 10px;
+	position:top;
+	margin-left:600px;
+}
+.row{
+	position:top;
+}
